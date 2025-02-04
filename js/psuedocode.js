@@ -42,6 +42,8 @@
 // Build selectable keyboard on screen - done
 // Create section for the word or phrase to populate - done
 // Create instructions for the game - done
+// Add a start button - done
+// add a reset button - done
 // If the user gets the answer wrong, display the correct word/phrase/name on screen
 // Assign IDs and Classes to HTML
 
