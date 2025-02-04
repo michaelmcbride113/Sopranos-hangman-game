@@ -44,6 +44,7 @@
 // Create instructions for the game - done
 // Add a start button - done
 // add a reset button - done
+// Add in picture of Tony
 // If the user gets the answer wrong, display the correct word/phrase/name on screen
 // Assign IDs and Classes to HTML
 
@@ -62,6 +63,11 @@
 
 // JS
 
+// Have data.js pull a random answer - done 
+// Define letter clicks and have them populate in console.log
+// Set random name to the correct answer
+// Define winning/losing logic
+
 // create winning logic
 // create losing logic
 // Make letter buttons work on screen
@@ -77,15 +83,16 @@
 
 // JS Data
 
-// Find list of expressions, people, locations etc.. 
+// Find list of expressions, people, locations etc..  - done
 // online and create a dataset for the game - done
 // Possibly create multiple datasets based on type  
-// and use the name of the dataset as a hint in the game
+// and use the name of the dataset as a hint in the game - done
 
 // Nice to haves
 // Style website like website in the show https://sopranos.fandom.com/wiki/Www.megamob.com?file=1_4_sopranos_2.jpg
 // Fix for mobile and different screen sizes
 // Allow users to type answers from their keyboard (Key presses)
+// Add in locations and sayings to random choices
 
 
 
