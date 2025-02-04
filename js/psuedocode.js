@@ -2,8 +2,8 @@
 
 // Schedule:
 // Monday
-//  - Finish before coding steps
-// - Build Java Dataset
+//  - Finish before coding steps - done
+// - Build Java Dataset - done
 // - HTML
 // Tuesday
 //  - finish HTML
@@ -37,11 +37,11 @@
 
 // HTML
 
-// Build hangman podium
-// Write instructions for playing the game
-// Build selectable keyboard on screen
-// Create section for the word or phrase to populate
-// Create instructions for the game
+// Build hangman podium - done
+// Write instructions for playing the game - done
+// Build selectable keyboard on screen - done
+// Create section for the word or phrase to populate - done
+// Create instructions for the game - done
 // If the user gets the answer wrong, display the correct word/phrase/name on screen
 // Assign IDs and Classes to HTML
 
