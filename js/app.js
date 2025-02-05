@@ -8,21 +8,25 @@
 let gameOver = false;
 let guessedWord = names[Math.floor(Math.random () * names.length)];
 let guessedLetters = [];
+let shownWord = [];
 let remainingGuesses = 7;
-let displayWord = [];
+
 
 /*------------------------ Cached Element References ------------------------*/
 const keyboardChoiceEl = document.querySelectorAll('.keys');
 const startGameBtn = document.querySelector('#start-game');
 const resetGameBtn = document.querySelector('#reset-game');
-const wordDisplayEl = document.querySelector('#spaces');
+const shownWordEl = document.querySelector('#spaces');
 const messageEl = document.querySelector('#message');
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-keyboardChoiceEl.addEventListener('click', () => {
-    console.log('i am clicked');
+keyboardChoiceEl.forEach((key) => {
+    key.addEventListener('click', () => {
+        console.log('key clicked')
+    })
 })
+
 startGameBtn.addEventListener('click', () => {
     console.log('i am clicked');
 })
@@ -34,22 +38,43 @@ const init = () => {
     gameOver = false;
     guessedWord = names[Math.floor(Math.random () * names.length)];
     guessedLetters = [];
+    shownWord = [];
+    for (let i=0; i < guessedWord.length; i++) {
+        if (guessedWord[i] === '') {
+            shownWord.push('');
+        } else {
+            shownWord.push('_');
+        }
+    }
     remainingGuesses = 7;
-    displayWord = [];
     render();
 };
-const render = () => {};
+const render = () => {
 
+};
 
 const checkForWinner = () => {
-    if (displayWord.every(letter => letter !== '_')) {
+    if (shownWord.every(letter => letter !== '_')) {
         messageEl.textContent = 'Congrats, you win!';
         gameOver = true;
-    } else if (remainingGuesses = 0) {
+    } else if (remainingGuesses === 0) {
         messageEl.textContent = `You lost! Your word was ${guessedWord}`
         gameOver = true;
     }
 };
+
+const keyClick = (event) => {
+    if(gameOver) return;
+    const letter = event.target.textContent;
+    const guessedLettersFilter = guessedLetters.filter((guessedLetter) => 
+        guessedLetter === letter);
+    if(guessedLettersFilter.length > 0) {
+        messageEl.textContent = `You already guesses ${letter}, please make another selection`;
+        return;
+    }
+    guessedLetters.push(letter);
+}
+
 
 resetGameBtn.addEventListener('click', init);
 init();
