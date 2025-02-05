@@ -1,5 +1,5 @@
 // Bug tracking
-// Fixed keyboardChoiceEl to target all keys but now need to fix query selector to target all keys
+// Code seems to be completed - debug fest tomorrow
 
 /*-------------------------------- Constants --------------------------------*/
 
@@ -27,7 +27,7 @@ keyboardChoiceEl.forEach((key) => {
     })
 })
 
-startGameBtn.addEventListener('click', () => {
+startGameBtn.addEventListener('click', init => {
     console.log('i am clicked');
 })
 // resetGameBtn.addEventListener('click', init);
@@ -40,8 +40,8 @@ const init = () => {
     guessedLetters = [];
     shownWord = [];
     for (let i=0; i < guessedWord.length; i++) {
-        if (guessedWord[i] === '') {
-            shownWord.push('');
+        if (guessedWord[i] === ' ') {
+            shownWord.push(' ');
         } else {
             shownWord.push('_');
         }
@@ -50,7 +50,12 @@ const init = () => {
     render();
 };
 const render = () => {
-
+    shownWordEl.innerText = '';
+    for (let i = 0; i < shownWord.length; i++) {
+        shownWordEl.textContent += shownWord[i] = '';
+    }
+    messageEl.textContent = `${remainingGuesses} guesses remaining`;
+    checkForWinner();
 };
 
 const checkForWinner = () => {
@@ -73,7 +78,20 @@ const keyClick = (event) => {
         return;
     }
     guessedLetters.push(letter);
-}
+
+    let correctLetter = false;
+
+    for (let i = 0; i < guessedWord.length; i++) {
+        if (guessedWord[i] === letter) {
+            shownWord[i] = letter;
+            correctLetter = true;
+        }
+    }
+    if (!correctLetter) {
+        remainingGuesses - 1;
+    }
+    render();
+};
 
 
 resetGameBtn.addEventListener('click', init);
