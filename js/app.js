@@ -1,7 +1,6 @@
 // Bug tracking
 // Fix spaces with the _
 // Add pieces with incorrect guess
-// Update message when reseting game
 
 /*-------------------------------- Constants --------------------------------*/
 const init = () => {
@@ -12,12 +11,14 @@ const init = () => {
     
     for (let i=0; i < guessedWord.length; i++) {
         if (guessedWord[i] === ' ') {
-            shownWord.push(' ');
+            shownWord.push(' / ');
         } else {
             shownWord.push('_');
         }
     }
     remainingGuesses = 7;
+    guessedLettersEl.textContent = '';
+    messageEl.textContent = 'Make a selection';
     render();
 };
 
