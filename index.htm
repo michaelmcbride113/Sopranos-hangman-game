@@ -12,18 +12,24 @@
     <h1>
         Soprano's Hangman
     </h1>
-    <h2 id="message">Oh!</h2>
-    <h2 id="remaining-guesses"></h2>
-    <h3 id="guessed-letters"></h3>
-    <img src="https://pages.git.generalassemb.ly/emilycolon/project-1/images/empty-gallowspaper.png" alt="Hangman podium" width="250" height="333">
-    <button id ="start-game">Start Game</button>
-    <button id="reset-game">Reset</button>
-    <div id="keyboard">
+      <h2 id="message">Oh!</h2>
+    <div id="game-space">
+      <div id="left-side">
+        <h3 class = "spaces-heading">Answer:</h3>
+        <p id="spaces"></p>
+        <img id="gallows" src="https://pages.git.generalassemb.ly/emilycolon/project-1/images/empty-gallowspaper.png" alt="Hangman podium" width="200" height="300">
+    </div>
+    <div id="right-side">
+      <h2 id="remaining-guesses"></h2>
+      <h3 id="guessed-letters"></h3>
+      
+    </div>
+      <div id="keyboard">
         <div class="row">
           <div class="display"></div>
         </div>
         <div class="row">
-         <h2 class = "Keyboard">Keys</h2>
+         <h2 class = "Keyboard"></h2>
           <div class="keys">A</div>
           <div class="keys">B</div>
           <div class="keys">C</div>
@@ -55,6 +61,11 @@
           <div class="keys">Y</div>
           <div class="keys">Z</div>
         </div>
+    </div>
+
+  </div>
+    <button id ="start-game">Start Game</button>
+    <button id="reset-game">Reset</button>
     <p id="spaces"></p>
         <h2 class = "spaces-heading">Answer:</h2>
 
@@ -66,5 +77,6 @@
                 Use the keyboard on screen to make your selection and if you see your letter pop up in the blank space, you got one right!
                 Complete the puzzle before the hangman is completed to win!
             </p>
+      </div>
 </body>
 </html>

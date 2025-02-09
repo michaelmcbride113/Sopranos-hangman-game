@@ -39,11 +39,13 @@ const keyClick = (event) => {
         if (guessedWord[i] === letter) {
             shownWord[i] = letter;
             correctLetter = true;
+            messageEl.textContent = 'You always had the makings of a varsity athlete'
+
         }
     }
     if (!correctLetter) {
         remainingGuesses--;
-        messageEl.textContent = 'Incorrect guess, guess again!'
+        messageEl.textContent = 'Marone, that guess was terrible'
     }
     render();
 };
