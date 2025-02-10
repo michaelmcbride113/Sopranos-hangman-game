@@ -42,6 +42,7 @@ const names = [
     'THE DUCKS'
 ];
 
+
 // const locations = [
 //     'Carmelas spec house',
 //     'Satriales',

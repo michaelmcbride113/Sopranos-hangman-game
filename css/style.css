@@ -56,6 +56,9 @@
     padding: 25px;
     gap: 5px;
   }
+  #spaces-div {
+    margin-bottom: 20px;
+  }
   #spaces {
     display: flex;
     font-size: 20px;

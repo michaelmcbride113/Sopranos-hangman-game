@@ -1,7 +1,3 @@
-// Bug tracking
-// Fix spaces with the _
-// Add pieces with incorrect guess
-
 /*-------------------------------- Constants --------------------------------*/
 const init = () => {
     gameOver = false;
@@ -16,10 +12,27 @@ const init = () => {
             shownWord.push('_');
         }
     }
-    remainingGuesses = 7;
+    remainingGuesses = 6;
     guessedLettersEl.textContent = '';
     messageEl.textContent = 'Make a selection';
     render();
+};
+const updateHangman= () => {
+    if (remainingGuesses === 6) {
+        hangmanPiecesEl.innerHTML = `<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240215173028/0.png" alt="Gallows" width="200" height="300" />`;
+    } else if (remainingGuesses === 5) {
+        hangmanPiecesEl.innerHTML = `<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240215173033/1.png" alt="Hangman head" width="200" height="300" />`;
+    } else if (remainingGuesses === 4) {
+        hangmanPiecesEl.innerHTML = `<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240215173038/2.png" alt="Hangman body" width="200" height="300" />`;
+    } else if (remainingGuesses === 3) {
+        hangmanPiecesEl.innerHTML = `<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240215172733/3.png" alt="Hangman arm 1" width="200" height="300" />`;
+    } else if (remainingGuesses === 2) {
+        hangmanPiecesEl.innerHTML = `<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240215173815/4.png" alt="Hangman arm 2" width="200" height="300" />`;
+    } else if (remainingGuesses === 1) {
+        hangmanPiecesEl.innerHTML = `<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240215173859/5.png" alt="Hangman leg 1" width="200" height="300" />`;
+    } else if (remainingGuesses === 0) {
+        hangmanPiecesEl.innerHTML = `<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240215173931/6.png" alt="Hangman leg 2" width="200" height="300" />`;
+    }
 };
 
 const keyClick = (event) => {
@@ -55,7 +68,7 @@ let gameOver = false;
 let guessedWord = names[Math.floor(Math.random() * names.length)];
 let guessedLetters = [];
 let shownWord = [];
-let remainingGuesses = 7;
+let remainingGuesses = 6;
 
 console.log(guessedWord)
 /*------------------------ Cached Element References ------------------------*/
@@ -66,6 +79,7 @@ const shownWordEl = document.querySelector('#spaces');
 const messageEl = document.querySelector('#message');
 const remainingGuessesEl = document.querySelector('#remaining-guesses'); 
 const guessedLettersEl = document.querySelector('#guessed-letters'); 
+const hangmanPiecesEl = document.querySelector('#hangman-pieces')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -79,9 +93,10 @@ resetGameBtn.addEventListener('click', init);
 
 /*-------------------------------- Functions --------------------------------*/
 const render = () => {
-    shownWordEl.textContent = shownWord.join(' '); // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+    shownWordEl.textContent = shownWord.join(' ');
     remainingGuessesEl.textContent = `${remainingGuesses} guesses remaining`;
     guessedLettersEl.textContent = `Letters guessed: ${guessedLetters} `;
+    updateHangman ();
     checkForWinner();
 };
 
