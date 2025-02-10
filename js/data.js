@@ -41,26 +41,3 @@ const names = [
     'PIE O MIE',
     'THE DUCKS'
 ];
-
-
-// const locations = [
-//     'Carmelas spec house',
-//     'Satriales',
-//     'Vesuvio',
-//     'The Bada Bing',
-//     'The Pine Barrens',
-//     'Stugots',
-//     'Crazy Horse'
-// ]
-
-// const phrases = [
-//     'Oh',
-//     'Gabagoul',
-//     'Cause theyre stupid thats why',
-//     'I know seniors who are inspired',
-//     'Che bruta',
-//     'Goomar',
-//     'RICO',
-//     'Made man',
-//     'I wish the lord would take me now'
-// ]

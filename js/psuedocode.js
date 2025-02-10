@@ -101,13 +101,12 @@
 // After coding
 
 // Ensure the game is up to the WCAG 2.0 level AA standards
-// Ensure images on the site have alt text
+// Ensure images on the site have alt text - done
 // Commit to github when adequite progress has been made
-// Clean up code to project requirements
-// format code to project requirements
+// Clean up code to project requirements - done
+// format code to project requirements - done
 // Write README based on project requirements
 // One final runthrough of the project requirements
 // Create project presentation
-// Meet with Ben or Ashley to run through the completed project if that's allowed
-// Commit final completed project
-// Deploy project when completed
+// Commit final completed project - done
+// Deploy project when completed - done
